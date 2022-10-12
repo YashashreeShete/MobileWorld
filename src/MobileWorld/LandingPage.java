@@ -11,6 +11,9 @@ public class LandingPage {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		}
+	
+	//sign-up
+	
 @FindBy(xpath="//button[normalize-space()='SIGN IN']")
 WebElement signin;
 @FindBy(xpath="//a[normalize-space()='Sign up']")
@@ -70,26 +73,5 @@ public void signin(String Username, String Password) {
 public void goToLogin() {
     login.click();
 }
-//all mobiles
-
-@FindBy(xpath="//a[normalize-space()='All Mobiles']")
-WebElement allmobile;
-
-@FindBy(xpath="//input[@id='myInput']")
-WebElement search;
-
-@FindBy(xpath="//tbody/tr[1]/td[5]/a[1]")
-WebElement order;
-
-@FindBy(css="body > footer:nth-child(9) > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)")
-WebElement Home;
-public void allmobileapplication(String Sname) throws InterruptedException
-{
-    allmobile.click();
-    search.sendKeys(Sname);
-    Thread.sleep(1000);
-    order.click();
-}
-
 
 }
